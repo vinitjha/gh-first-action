@@ -1,0 +1,13 @@
+name: OutPut Information
+on: 
+ push: 
+    branches: [main, master]
+ pull_request:
+    branches: [main, master]   
+jobs: 
+  info: 
+    runs-on: ubuntu-latest
+    steps: 
+     - name: Output to GITHUB Context
+       run: echo "{{ toJSON{GITHUB} }}"
+      
